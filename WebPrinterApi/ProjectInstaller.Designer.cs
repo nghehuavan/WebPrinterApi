@@ -34,11 +34,13 @@ namespace WebPrinterApi
             // 
             // serviceProcessInstaller
             // 
+            this.serviceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalService;
             this.serviceProcessInstaller.Password = null;
             this.serviceProcessInstaller.Username = null;
             // 
             // serviceInstaller
             // 
+            this.serviceInstaller.Description = "http printer api port 5555";
             this.serviceInstaller.DisplayName = "WebPrinterApi";
             this.serviceInstaller.ServiceName = "WebPrinterApi";
             this.serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;

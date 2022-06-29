@@ -51,8 +51,9 @@
     <Reference Include="System.ServiceProcess" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\PrintHelper.cs" />
     <Compile Include="Model\PrintActionModel.cs" />
-    <Compile Include="WebHelper.cs" />
+    <Compile Include="Helper\WebHelper.cs" />
     <Compile Include="WebHost.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>

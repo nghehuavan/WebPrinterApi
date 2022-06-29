@@ -6,6 +6,7 @@ using Nancy;
 using Nancy.Extensions;
 using Nancy.ModelBinding;
 using RawPrint;
+using WebPrinterApi.Helper;
 using WebPrinterApi.Model;
 
 namespace WebPrinterApi
@@ -59,8 +60,7 @@ namespace WebPrinterApi
 
                 try
                 {
-                    IPrinter printer = new Printer();
-                    printer.PrintRawFile(body.printer_name, filePath);
+                    PrintHelper.PrintPdf(body.printer_name, filePath);
                     return HttpStatusCode.OK;
                 }
                 catch (Exception e)

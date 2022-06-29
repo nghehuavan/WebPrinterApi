@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System.Collections;
+using System.ComponentModel;
+using System.ServiceProcess;
 
 namespace WebPrinterApi
 {
@@ -9,5 +11,25 @@ namespace WebPrinterApi
         {
             InitializeComponent();
         }
+
+        protected override void OnAfterInstall(IDictionary savedState)
+        {
+            //base.OnAfterInstall(savedState);
+
+            using (var sc = new ServiceController(serviceInstaller.ServiceName))
+            {
+                sc.Start();
+            }
+        }
+
+        //protected override void OnBeforeUninstall(IDictionary savedState)
+        //{
+        //    using (var sc = new ServiceController(serviceInstaller.ServiceName))
+        //    {
+        //        sc.Stop();
+        //    }
+
+        //    base.OnBeforeUninstall(savedState);
+        //}
     }
 }
