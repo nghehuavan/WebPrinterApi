@@ -22,7 +22,7 @@ namespace WebPrinter.Web
                     var printers = new List<string>();
                     foreach (string s in System.Drawing.Printing.PrinterSettings.InstalledPrinters) printers.Add(s);
 
-                    return Response.AsJson(printers.Where(p => p.ToUpper() != "FAX" && p != "MICROSOFT XPS DOCUMENT WRITER"));
+                    return Response.AsJson(printers.Where(p => p.ToUpper() != "FAX" && p.ToUpper() != "MICROSOFT XPS DOCUMENT WRITER"));
                 }
                 catch (Exception e)
                 {
