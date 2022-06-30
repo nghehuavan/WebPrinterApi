@@ -36,6 +36,7 @@ namespace WebPrinter
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_Hide = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +77,7 @@ namespace WebPrinter
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(192, 166);
+            this.btn_Exit.Location = new System.Drawing.Point(297, 167);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(75, 23);
             this.btn_Exit.TabIndex = 100;
@@ -84,12 +85,23 @@ namespace WebPrinter
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // btn_Hide
+            // 
+            this.btn_Hide.Location = new System.Drawing.Point(378, 167);
+            this.btn_Hide.Name = "btn_Hide";
+            this.btn_Hide.Size = new System.Drawing.Size(75, 23);
+            this.btn_Hide.TabIndex = 100;
+            this.btn_Hide.Text = "Hide";
+            this.btn_Hide.UseVisualStyleBackColor = true;
+            this.btn_Hide.Click += new System.EventHandler(this.btn_Hide_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 193);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Hide);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -113,6 +125,7 @@ namespace WebPrinter
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.Button btn_Hide;
     }
 }
 

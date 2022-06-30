@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Nancy;
 using Nancy.ModelBinding;
 using WebPrinter.Helper;
@@ -20,7 +21,8 @@ namespace WebPrinter.Web
                 {
                     var printers = new List<string>();
                     foreach (string s in System.Drawing.Printing.PrinterSettings.InstalledPrinters) printers.Add(s);
-                    return Response.AsJson(printers);
+
+                    return Response.AsJson(printers.Where(p => p.ToUpper() != "FAX" && p != "MICROSOFT XPS DOCUMENT WRITER"));
                 }
                 catch (Exception e)
                 {

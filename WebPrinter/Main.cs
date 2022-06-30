@@ -35,5 +35,11 @@ namespace WebPrinter
                 this.Close();
             }
         }
+
+        private void btn_Hide_Click(object sender, System.EventArgs e)
+        {
+            this.Visible = false;
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
