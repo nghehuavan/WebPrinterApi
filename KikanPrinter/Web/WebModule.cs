@@ -82,7 +82,8 @@ namespace KikanPrinter.Web
             {
                 ctx.Response.WithHeader("Access-Control-Allow-Origin", "*")
                     .WithHeader("Access-Control-Allow-Methods", "*")
-                    .WithHeader("Access-Control-Allow-Headers", "*");
+                    .WithHeader("Access-Control-Allow-Headers", "*")
+                    .WithHeader("Access-Control-Max-Age", "3600");
             });
         }
     }
