@@ -44,9 +44,6 @@
     <Reference Include="DeviceId.Windows, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
       <HintPath>..\packages\DeviceId.Windows.6.2.0\lib\net40\DeviceId.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="DeviceId.Windows.Wmi, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
-      <HintPath>..\packages\DeviceId.Windows.Wmi.6.2.0\lib\net40\DeviceId.Windows.Wmi.dll</HintPath>
-    </Reference>
     <Reference Include="Nancy, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.1.4.1\lib\net40\Nancy.dll</HintPath>
     </Reference>
