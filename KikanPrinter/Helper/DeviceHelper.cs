@@ -9,7 +9,7 @@ namespace KikanPrinter.Helper
             return new DeviceIdBuilder()
                 .AddMachineName()
                 .AddOsVersion()
-                .AddMacAddress().OnWindows(window => window.AddMachineGuid())
+                .AddMacAddress()
                 .ToString();
         }
 
