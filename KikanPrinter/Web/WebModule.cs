@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using KikanPrinter.Helper;
 using KikanPrinter.Model;
 using Nancy;
@@ -24,7 +25,18 @@ namespace KikanPrinter.Web
                     var printers = new List<string>();
                     foreach (string s in System.Drawing.Printing.PrinterSettings.InstalledPrinters) printers.Add(s);
 
-                    return Response.AsJson(printers.Where(p => p.ToUpper() != "FAX" && p.ToUpper() != "MICROSOFT XPS DOCUMENT WRITER"));
+                    var resp = new
+                    {
+                        version = Application.ProductVersion,
+                        device = new
+                        {
+                            id = WebHost.DeviceId,
+                            name = Environment.MachineName,
+                        },
+                        printers = printers.Where(p => p.ToUpper() != "FAX" && p.ToUpper() != "MICROSOFT XPS DOCUMENT WRITER")
+                    };
+
+                    return Response.AsJson(resp);
                 }
                 catch (Exception e)
                 {

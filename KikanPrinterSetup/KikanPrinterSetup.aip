@@ -43,6 +43,9 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{5EF514D3-2D63-4A59-AE48-526FE0F41809}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="DeviceId.Windows.Wmi.dll" ComponentId="{3D5A540E-62EE-474A-8A9F-7B14ED74E5CA}" Directory_="APPDIR" Attributes="0" KeyPath="DeviceId.Windows.Wmi.dll"/>
+    <ROW Component="DeviceId.Windows.dll" ComponentId="{31668619-30FF-4DC9-B5BA-BD1708C479BB}" Directory_="APPDIR" Attributes="0" KeyPath="DeviceId.Windows.dll"/>
+    <ROW Component="DeviceId.dll" ComponentId="{F71896F2-1D9B-4A1F-9223-D9AB6AF453AB}" Directory_="APPDIR" Attributes="0" KeyPath="DeviceId.dll"/>
     <ROW Component="KikanPrinter.exe" ComponentId="{7687F357-E913-401B-9DE3-97EBA4E3CE59}" Directory_="APPDIR" Attributes="0" KeyPath="KikanPrinter.exe"/>
     <ROW Component="KikanPrinter.exe.config" ComponentId="{8936FB1D-D88A-45D3-B158-B2570570E8F5}" Directory_="APPDIR" Attributes="0" KeyPath="KikanPrinter.exe.config" Type="0"/>
     <ROW Component="Nancy.Hosting.Self.dll" ComponentId="{E3A63B26-386D-44E3-ACDD-4C131694B898}" Directory_="APPDIR" Attributes="0" KeyPath="Nancy.Hosting.Self.dll"/>
@@ -71,6 +74,12 @@
     <ROW File="PdfiumViewer.xml" Component_="KikanPrinter.exe.config" FileName="PDFIUM~1.XML|PdfiumViewer.xml" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\PdfiumViewer.xml" SelfReg="false"/>
     <ROW File="main.ico" Component_="main.ico" FileName="main.ico" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\Resources\main.ico" SelfReg="false"/>
     <ROW File="pdfium.dll" Component_="pdfium.dll" FileName="pdfium.dll" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\x86\pdfium.dll" SelfReg="false"/>
+    <ROW File="DeviceId.dll" Component_="DeviceId.dll" FileName="DeviceId.dll" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\DeviceId.dll" SelfReg="false"/>
+    <ROW File="DeviceId.Windows.dll" Component_="DeviceId.Windows.dll" FileName="DEVICE~1.DLL|DeviceId.Windows.dll" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\DeviceId.Windows.dll" SelfReg="false"/>
+    <ROW File="DeviceId.Windows.Wmi.dll" Component_="DeviceId.Windows.Wmi.dll" FileName="DEVICE~2.DLL|DeviceId.Windows.Wmi.dll" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\DeviceId.Windows.Wmi.dll" SelfReg="false"/>
+    <ROW File="DeviceId.Windows.Wmi.xml" Component_="KikanPrinter.exe.config" FileName="DEVICE~1.XML|DeviceId.Windows.Wmi.xml" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\DeviceId.Windows.Wmi.xml" SelfReg="false"/>
+    <ROW File="DeviceId.Windows.xml" Component_="KikanPrinter.exe.config" FileName="DEVICE~2.XML|DeviceId.Windows.xml" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\DeviceId.Windows.xml" SelfReg="false"/>
+    <ROW File="DeviceId.xml" Component_="KikanPrinter.exe.config" FileName="DeviceId.xml" Attributes="0" SourcePath="..\KikanPrinter\bin\Release\DeviceId.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -171,6 +180,9 @@
     <ROW Feature_="MainFeature" Component_="PdfiumViewer.dll"/>
     <ROW Feature_="MainFeature" Component_="main.ico"/>
     <ROW Feature_="MainFeature" Component_="pdfium.dll"/>
+    <ROW Feature_="MainFeature" Component_="DeviceId.dll"/>
+    <ROW Feature_="MainFeature" Component_="DeviceId.Windows.dll"/>
+    <ROW Feature_="MainFeature" Component_="DeviceId.Windows.Wmi.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="main.exe" SourcePath="..\KikanPrinter\bin\Release\Resources\main.ico" Index="0"/>
