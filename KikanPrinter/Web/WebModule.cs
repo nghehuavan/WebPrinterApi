@@ -85,6 +85,48 @@ namespace KikanPrinter.Web
                     };
                 }
             };
+
+            Get["/printer/run"] = x =>
+            {
+                var body = this.Bind<PrintActionModel>();
+                var filePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid() + ".pdf");
+                if (string.IsNullOrEmpty(body.printer_name)
+                    || string.IsNullOrEmpty(body.file_url))
+                {
+                    return new Response
+                    {
+                        StatusCode = HttpStatusCode.BadRequest,
+                        ReasonPhrase = "missing printer_name or file_url !",
+                    };
+                }
+
+                try
+                {
+                    WebHelper.DownloadFile(body.file_url, filePath);
+                }
+                catch (Exception e)
+                {
+                    return new Response
+                    {
+                        StatusCode = HttpStatusCode.BadRequest,
+                        ReasonPhrase = "file_url can't download !"
+                    };
+                }
+
+                try
+                {
+                    PrintHelper.PrintPdf(body.printer_name, filePath);
+                    return HttpStatusCode.OK;
+                }
+                catch (Exception e)
+                {
+                    return new Response
+                    {
+                        StatusCode = HttpStatusCode.BadRequest,
+                        ReasonPhrase = $"[{body.printer_name}] can't print!"
+                    };
+                }
+            };
         }
 
         public void EnableCors()
